@@ -18,6 +18,7 @@
 VENDOR_PATH := device/huawei/msm8909-common
 
 # Include board config fragments
+include $(VENDOR_PATH)/PlatformConfigCommon.mk
 include $(VENDOR_PATH)/board/*.mk
 
 # Inherit from the proprietary version
