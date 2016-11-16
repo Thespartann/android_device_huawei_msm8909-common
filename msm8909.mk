@@ -28,13 +28,6 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapgrowthlimit=128m \
-    dalvik.vm.heapminfree=6m \
-    dalvik.vm.heapstartsize=14m
-
-$(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
-
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_ENFORCE_RRO_TARGETS := framework-res
@@ -117,6 +110,15 @@ PRODUCT_PACKAGES += \
 # Compatibility
 PRODUCT_PACKAGES += \
     libboringssl-compat
+
+# Dalvik properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.heapstartsize=8m \
+    dalvik.vm.heapgrowthlimit=192m \
+    dalvik.vm.heapsize=256m \
+    dalvik.vm.heaptargetutilization=0.75 \
+    dalvik.vm.heapminfree=512k \
+    dalvik.vm.heapmaxfree=8m
 
 # Display
 PRODUCT_PACKAGES += \
