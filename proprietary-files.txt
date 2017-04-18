@@ -110,6 +110,9 @@ vendor/lib/libmmcamera_sunny_q13v04b_eeprom.so
 vendor/lib/libmmcamera_sunrise_pc0fe_eeprom.so
 vendor/lib/libmmcamera_truly_cm7700_eeprom.so
 
+# STLport
+vendor/lib/libstlport.so
+
 # Venus (media) firmware
 etc/firmware/venus.b00
 etc/firmware/venus.b01
