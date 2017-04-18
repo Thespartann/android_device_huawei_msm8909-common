@@ -29,4 +29,4 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 include $(LOCAL_PATH)/product/*.mk
 
 # Vendor product configurations
-$(call inherit-product-if-exists, vendor/huawei/msm8909-common/msm8909-common-vendor.mk)
+$(call inherit-product, vendor/huawei/msm8909-common/msm8909-common-vendor.mk)

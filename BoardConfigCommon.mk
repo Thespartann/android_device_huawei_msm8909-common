@@ -22,4 +22,4 @@ include $(VENDOR_PATH)/PlatformConfigCommon.mk
 include $(VENDOR_PATH)/board/*.mk
 
 # Inherit from the proprietary version
--include vendor/huawei/msm8909-common/BoardConfigVendor.mk
+include vendor/huawei/msm8909-common/BoardConfigVendor.mk
