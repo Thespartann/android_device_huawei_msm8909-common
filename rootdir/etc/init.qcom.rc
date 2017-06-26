@@ -42,6 +42,8 @@ on early-init
     write /sys/class/leds/lcd-backlight/trigger "backlight"
 
 on init
+    export LD_SHIM_LIBS /system/vendor/lib/libmmqjpeg_codec.so|libboringssl-compat.so 
+
     # Set permissions for persist partition
     mkdir /persist 0771 system system
 
