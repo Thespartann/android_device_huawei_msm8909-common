@@ -95,6 +95,8 @@ TW_EXTRA_LANGUAGES := true
 TW_INPUT_BLACKLIST := "accelerometer\x0alis3dh-accel"
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 BOARD_SUPPRESS_SECURE_ERASE := true
+TW_INCLUDE_CRYPTO := true
+TW_NO_SCREEN_TIMEOUT := true
 endif
 
 # RIL
