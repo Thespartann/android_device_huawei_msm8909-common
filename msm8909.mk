@@ -83,6 +83,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libshim_cutils
 
+# Compatibility
+PRODUCT_PACKAGES += \
+    libboringssl-compat
+
 # Display
 PRODUCT_PACKAGES += \
     gralloc.msm8909 \
