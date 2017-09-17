@@ -5,6 +5,7 @@ persist.audio.fluence.voicerec=false
 persist.audio.fluence.speaker=true
 
 # Display
+debug.hwui.use_buffer_age=false
 ro.sf.lcd_density=320
 ro.qualcomm.cabl=0
 
@@ -23,9 +24,6 @@ ro.hwpp.cust_ons_bin=true
 
 # disable camera debug spam
 persist.camera.hal.debug.mask=0
-
-# use 3 threads max for dex2oat
-ro.sys.fw.dex2oat_thread_count=3
 
 # Storage
 ro.sys.sdcardfs=true
