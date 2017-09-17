@@ -54,9 +54,6 @@ persist.data.qmi.adb_logmask=0
 persist.radio.apm_sim_not_pwdn=1
 ro.telephony.call_ring.multiple=false
 
-# Use 3 threads max for dex2oat
-ro.sys.fw.dex2oat_thread_count=3
-
 # Wi-Fi
 wifi.interface=wlan0
 
