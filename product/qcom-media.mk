@@ -7,7 +7,8 @@ PRODUCT_PACKAGES += \
     libOmxQcelp13Enc \
     libOmxVdec \
     libOmxVenc \
-    libstagefrighthw
+    libstagefrighthw \
+    libstagefright_soft_flacdec
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs_msm8909.xml:system/etc/media_codecs.xml
