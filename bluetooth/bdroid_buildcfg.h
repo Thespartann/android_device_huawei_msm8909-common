@@ -30,24 +30,34 @@ static inline const char* BtmGetDefaultName()
 	char product_model[PROPERTY_VALUE_MAX];
 	property_get("ro.product.model", product_model, "");
 
-	if (strstr(product_model, "C8817D"))
-		return "HUAWEI C8817D";
-	if (strstr(product_model, "C8817E"))
-		return "HUAWEI C8817E";
-	if (strstr(product_model, "G621-TL00"))
-		return "HUAWEI G621-TL00";
-	if (strstr(product_model, "G620S-UL00"))
-		return "HUAWEI G620S-UL00";
-	if (strstr(product_model, "G620S-L01"))
-		return "HUAWEI G620S-L01";
-	if (strstr(product_model, "G620S-L02"))
-		return "HUAWEI G620S-L02";
-	if (strstr(product_model, "Che1-CL10"))
-		return "HUAWEI Che1-CL10";
-	if (strstr(product_model, "Che1-CL20"))
-		return "HUAWEI Che1-CL20";
-	if (strstr(product_model, "Che1-L04"))
-		return "HUAWEI Che1-L04";
+	if (strstr(product_model, "SCL-AL00"))
+		return "HUAWEI SCL-AL00";
+	if (strstr(product_model, "SCL-CL00"))
+		return "HUAWEI SCL-CL00";
+	if (strstr(product_model, "SCL-L01"))
+		return "HUAWEI SCL-L01";
+	if (strstr(product_model, "SCL-L02"))
+		return "HUAWEI SCL-L02";
+	if (strstr(product_model, "SCL-L03"))
+		return "HUAWEI SCL-L03";
+	if (strstr(product_model, "SCL-L04"))
+		return "HUAWEI SCL-L04";
+	if (strstr(product_model, "SCL-L21"))
+		return "HUAWEI SCL-L21";
+	if (strstr(product_model, "SCL-TL00"))
+		return "HUAWEI SCL-TL00";
+	if (strstr(product_model, "SCL-TL10"))
+		return "HUAWEI SCL-TL10";
+	if (strstr(product_model, "SCL-U03"))
+		return "HUAWEI SCL-U03";
+	if (strstr(product_model, "SCL-U21"))
+		return "HUAWEI SCL-U21";
+	if (strstr(product_model, "SCL-U23"))
+		return "HUAWEI SCL-U23";
+	if (strstr(product_model, "SCL-U31"))
+		return "HUAWEI SCL-U31";
+	if (strstr(product_model, "SCC-U21"))
+		return "HUAWEI SCC-U21";
 
 	return "";
 }
