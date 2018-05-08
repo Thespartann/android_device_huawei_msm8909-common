@@ -2,7 +2,8 @@
 PRODUCT_PACKAGES += \
     camera.msm8909 \
     Snap \
-    libboringssl-compat
+    libboringssl-compat \
+    libstlport
 
 # Camera properties
 PRODUCT_PROPERTY_OVERRIDES += \
