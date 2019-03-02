@@ -112,5 +112,8 @@ USE_SENSOR_MULTI_HAL := true
 # Wifi
 TARGET_PROVIDES_WCNSS_QMI := true
 
-# inherit from the proprietary version
+# Include board config fragments
+include $(VENDOR_PATH)/board/*.mk
+
+# Inherit from the proprietary version
 -include vendor/huawei/msm8916-common/BoardConfigVendor.mk
