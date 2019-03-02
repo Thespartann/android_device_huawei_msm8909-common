@@ -1,2 +1,2 @@
 BOARD_SEPOLICY_DIRS += \
-    $(PLATFORM_PATH)/sepolicy
+    $(VENDOR_PATH)/sepolicy

@@ -16,8 +16,6 @@
 
 FORCE_32_BIT := true
 
-include device/cyanogen/msm8916-common/BoardConfigCommon.mk
-
 VENDOR_PATH := device/huawei/msm8916-common
 
 # Audio
