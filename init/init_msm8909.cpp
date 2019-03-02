@@ -41,7 +41,7 @@
 #include "log.h"
 #include "util.h"
 
-#include "init_msm8916.h"
+#include "init_msm8909.h"
 
 using android::base::Trim;
 

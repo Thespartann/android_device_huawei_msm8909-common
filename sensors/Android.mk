@@ -46,19 +46,19 @@ LOCAL_COPY_HEADERS := 	\
 		sensors_extension.h \
 		sensors.h
 
-LOCAL_SRC_FILES :=	\
-		sensors.cpp 			\
-		SensorBase.cpp			\
-		LightSensor.cpp			\
-		ProximitySensor.cpp		\
-		CompassSensor.cpp		\
-		Accelerometer.cpp				\
-		Gyroscope.cpp				\
-		Bmp180.cpp				\
+LOCAL_SRC_FILES := \
+		sensors.cpp \
+		SensorBase.cpp \
+		LightSensor.cpp	\
+		ProximitySensor.cpp \
+		CompassSensor.cpp \
+		Accelerometer.cpp \
+		Gyroscope.cpp \
+		Bmp180.cpp \
 		InputEventReader.cpp \
 		CalibrationManager.cpp \
 		NativeSensorManager.cpp \
-		VirtualSensor.cpp	\
+		VirtualSensor.cpp \
 		sensors_XML.cpp \
 		SignificantMotion.cpp
 

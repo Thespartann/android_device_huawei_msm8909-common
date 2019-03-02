@@ -16,7 +16,7 @@
 
 FORCE_32_BIT := true
 
-VENDOR_PATH := device/huawei/msm8916-common
+VENDOR_PATH := device/huawei/msm8909-common
 
 # Audio
 USE_XML_AUDIO_POLICY_CONF := 1
@@ -50,14 +50,14 @@ USE_DEVICE_SPECIFIC_GPS := true
 TARGET_USE_COMPAT_GRALLOC_ALIGN := true
 
 # Init
-TARGET_LIBINIT_MSM8916_DEFINES_FILE := $(VENDOR_PATH)/init/init_cherry.cpp
+TARGET_LIBINIT_MSM8909_DEFINES_FILE := $(VENDOR_PATH)/init/init_scale.cpp
 
 # Kernel
 BOARD_DTBTOOL_ARGS := -2
 BOARD_KERNEL_IMAGE_NAME := zImage
 BOARD_KERNEL_SEPARATED_DT := true
 TARGET_KERNEL_SOURCE := kernel/huawei/msm8916
-TARGET_KERNEL_CONFIG := lineageos_cherry_defconfig
+TARGET_KERNEL_CONFIG := lineageos_scale_defconfig
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -114,4 +114,4 @@ TARGET_PROVIDES_WCNSS_QMI := true
 include $(VENDOR_PATH)/board/*.mk
 
 # Inherit from the proprietary version
--include vendor/huawei/msm8916-common/BoardConfigVendor.mk
+-include vendor/huawei/msm8909-common/BoardConfigVendor.mk

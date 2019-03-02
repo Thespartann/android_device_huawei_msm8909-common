@@ -14,10 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product-if-exists, vendor/huawei/msm8916-common/msm8916-common-vendor.mk)
+$(call inherit-product-if-exists, vendor/huawei/msm8909-common/msm8909-common-vendor.mk)
 
 # Must define platform variant before including any common things
-TARGET_BOARD_PLATFORM_VARIANT := msm8916
+TARGET_BOARD_PLATFORM_VARIANT := msm8909
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -69,7 +69,7 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.msm8916 \
+    camera.msm8909 \
     Snap
 
 # Compat symbols
@@ -78,7 +78,7 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    gps.msm8916
+    gps.msm8909
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/flp.conf:system/etc/flp.conf \
@@ -94,7 +94,7 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    lights.msm8916
+    lights.msm8909
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -109,7 +109,7 @@ PRODUCT_PACKAGES += \
 # Sensors HAL
 PRODUCT_PACKAGES += \
     calmodule.cfg \
-    sensors.msm8916 \
+    sensors.msm8909 \
     sensors.native
 
 PRODUCT_COPY_FILES += \
