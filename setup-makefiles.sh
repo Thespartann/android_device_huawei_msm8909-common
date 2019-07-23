@@ -40,7 +40,6 @@ setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" true
 write_headers "scale"
 
 write_makefiles "$MY_DIR"/proprietary-files.txt true
-write_makefiles "$MY_DIR"/proprietary-files-qc.txt true
 
 # Finish
 write_footers
