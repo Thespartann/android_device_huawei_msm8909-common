@@ -36,7 +36,7 @@ fi
 setup_vendor "$DEVICE_COMMON" "$VENDOR" "$CM_ROOT" "true"
 
 # Copyright headers and guards
-write_headers "che10 cherry"
+write_headers "scale"
 
 # The standard common blobs
 write_makefiles "$MY_DIR"/proprietary-files.txt
