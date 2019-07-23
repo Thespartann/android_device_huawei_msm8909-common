@@ -1,4 +1,4 @@
-/* Copyright (c) 2012, The Linux Foundataion. All rights reserved.
+/* Copyright (c) 2012-2015, The Linux Foundataion. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -48,7 +48,7 @@ camera_module_t HAL_MODULE_INFO_SYM = {
 #ifndef USE_JB_MR1
     .set_callbacks          = NULL,
 #endif
-#ifdef USE_VENDOR_CAMERA_EXT
+//#ifdef USE_VENDOR_CAMERA_EXT
     .get_vendor_tag_ops     = NULL,
 #ifndef USE_KK_CODE
     .open_legacy            = NULL,
@@ -56,5 +56,5 @@ camera_module_t HAL_MODULE_INFO_SYM = {
     .init                   = NULL,
 #endif
     .reserved               = {0}
-#endif
+//#endif
 };
