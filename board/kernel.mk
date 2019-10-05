@@ -10,5 +10,5 @@ BOARD_RAMDISK_OFFSET     := 0x02000000
 ENABLE_CPUSETS := true
 
 # Kernel properties
-TARGET_KERNEL_SOURCE := kernel/huawei/msm8916
-TARGET_KERNEL_CONFIG := lineageos_scale_defconfig
+TARGET_KERNEL_SOURCE := kernel/huawei/msm8909
+TARGET_KERNEL_CONFIG := scale_defconfig
