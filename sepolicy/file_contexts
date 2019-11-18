@@ -4,3 +4,11 @@
 /(vendor|system/vendor)/bin/oeminfo_server                          u:object_r:oeminfo_server_exec:s0
 /(vendor|system/vendor)/bin/hw_test_diag                            u:object_r:hw_diag_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.huawei_msm8916                  u:object_r:hal_lineage_touch_default_exec:s0
+
+# Lights
+/sys/devices/soc\.0/gpio-leds\.[a-z0-9]+/leds(/.*)?                       u:object_r:sysfs_leds:s0
+/sys/devices/soc\.0/qcom,camera-led-flash\.[a-z0-9]+/leds(/.*)?           u:object_r:sysfs_leds:s0
+/sys/devices/soc\.0/[a-z0-9]+\.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/leds(/.*)?   u:object_r:sysfs_leds:s0
+
+# Shell files
+/system/vendor/bin/init\.qcom\.mem\.sh                                    u:object_r:qti_init_shell_exec:s0

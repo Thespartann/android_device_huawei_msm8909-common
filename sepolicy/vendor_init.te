@@ -1,1 +1,2 @@
 r_dir_file(vendor_init, firmware_file)
+allow vendor_init proc_kernel_sched:file write;

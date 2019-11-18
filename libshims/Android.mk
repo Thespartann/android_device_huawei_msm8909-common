@@ -1,3 +1,5 @@
+#
+# Copyright (C) 2018 The CyanogenMod Project
 # Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +15,26 @@
 # limitations under the License.
 
 LOCAL_PATH := $(call my-dir)
+
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := \
+    flp/flp.c
+
+LOCAL_MODULE := libshims_flp
+LOCAL_MODULE_TAGS := optional
+
+include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := \
+    get_process_name/get_process_name.c
+
+LOCAL_MODULE := libshims_get_process_name
+LOCAL_MODULE_TAGS := optional
+
+include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := hw_cutils.c
