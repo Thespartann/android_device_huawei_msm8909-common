@@ -14,40 +14,27 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-FORCE_32_BIT := true
 
-VENDOR_PATH := device/huawei/msm8916-common
+VENDOR_PATH := device/huawei/msm8909-common
 
-BUILD_FINGERPRINT := "Huawei/C8817D/hwC8817D:4.4.4/HuaweiC8817D/C92B381:user/release-keys"
+BUILD_FINGERPRINT := "Huawei/SCL-L01/hwSCL-Q:5.1.1/HuaweiSCL-L01/C432B150:user/release-keys"
 
 # Platform
-TARGET_BOARD_PLATFORM := msm8916
-TARGET_BOOTLOADER_BOARD_NAME := MSM8916
+TARGET_BOARD_PLATFORM := msm8909
+TARGET_BOOTLOADER_BOARD_NAME := MSM8909
 
 TARGET_NO_BOOTLOADER := true
 
 # Architecture
-ifneq ($(FORCE_32_BIT),true)
-TARGET_ARCH := arm64
-TARGET_ARCH_VARIANT := armv8-a
-TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := cortex-a53
-
-TARGET_2ND_ARCH := arm
-TARGET_2ND_ARCH_VARIANT := armv8-a
-TARGET_2ND_CPU_ABI := armeabi-v7a
-TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := cortex-a53
-else
 TARGET_ARCH := arm
-TARGET_ARCH_VARIANT := armv8-a
+TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_VARIANT := cortex-a53
+TARGET_CPU_VARIANT := cortex-a7
+FORCE_32_BIT := true
 
+# Binder API
 TARGET_USES_64_BIT_BINDER := true
-endif
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
@@ -73,7 +60,7 @@ TARGET_USES_MEDIA_EXTENSIONS := true
 BOARD_GLOBAL_CFLAGS += -DCAMERA_VENDOR_L_COMPAT
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
     /system/vendor/bin/mm-qcamera-daemon=23
-    
+
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BOARD_CHARGER_ENABLE_SUSPEND := true
@@ -109,9 +96,9 @@ TARGET_NO_RPC := true
 USE_DEVICE_SPECIFIC_GPS := true
 
 # Init
-TARGET_LIBINIT_MSM8916_DEFINES_FILE := $(VENDOR_PATH)/init/init_cherry.cpp
-TARGET_INIT_VENDOR_LIB := libinit_msm8916
-TARGET_RECOVERY_DEVICE_MODULES := libinit_msm8916
+TARGET_LIBINIT_MSM8909_DEFINES_FILE := $(VENDOR_PATH)/init/init_scale.cpp
+TARGET_INIT_VENDOR_LIB := libinit_msm8909
+TARGET_RECOVERY_DEVICE_MODULES := libinit_msm8909
 
 # Kernel
 BOARD_DTBTOOL_ARGS := -2
@@ -123,14 +110,14 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_RAMDISK_OFFSET := 0x02000000
 
-TARGET_KERNEL_SOURCE := kernel/huawei/msm8916
-TARGET_KERNEL_CONFIG := lineageos_cherry_defconfig
+TARGET_KERNEL_SOURCE := kernel/huawei/msm8909
+TARGET_KERNEL_CONFIG := scale_defconfig
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
 # Manifest
-DEVICE_MANIFEST_FILE += $(VENDOR_PATH)/configs/manifest.xml
+DEVICE_MANIFEST_FILE += $(VENDOR_PATH)/manifest.xml
 
 # Partitions
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -147,13 +134,8 @@ BOARD_PERSISTIMAGE_PARTITION_SIZE := 0x02000000
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 
 # Power
-ifeq ($(TARGET_BOARD_PLATFORM_VARIANT),msm8939)
-TARGET_POWERHAL_SET_INTERACTIVE_EXT := $(VENDOR_PATH)/power/power_ext.c
-endif
 TARGET_HAS_LEGACY_POWER_STATS := true
-ifeq ($(TARGET_BOARD_PLATFORM_VARIANT),msm8916)
 TARGET_HAS_NO_POWER_STATS := true
-endif
 TARGET_HAS_NO_POWER_STATS := true
 TARGET_TAP_TO_WAKE_NODE := "/sys/touch_screen/easy_wakeup_gesture"
 TARGET_HAS_NO_WLAN_STATS := true
@@ -161,7 +143,6 @@ TARGET_USES_INTERACTION_BOOST := true
 
 # Properties
 TARGET_SYSTEM_PROP += $(VENDOR_PATH)/system.prop
-TARGET_SYSTEM_PROP += $(VENDOR_PATH)/$(TARGET_BOARD_PLATFORM_VARIANT).prop
 
 # QCOM
 BOARD_USES_QCOM_HARDWARE := true
@@ -225,4 +206,4 @@ WIFI_DRIVER_FW_PATH_STA := "sta"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit from the proprietary version
-include vendor/huawei/msm8916-common/BoardConfigVendor.mk
+include vendor/huawei/msm8909-common/BoardConfigVendor.mk

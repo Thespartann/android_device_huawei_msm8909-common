@@ -42,7 +42,7 @@
 #include "property_service.h"
 #include "vendor_init.h"
 
-#include "init_msm8916.h"
+#include "init_msm8909.h"
 
 using android::base::GetProperty;
 using android::base::ReadFileToString;

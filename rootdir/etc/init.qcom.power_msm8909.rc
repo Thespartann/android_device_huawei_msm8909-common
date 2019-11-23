@@ -5,7 +5,7 @@ on enable-low-power
     write /proc/sys/kernel/sched_window_stats_policy 3
     write /proc/sys/kernel/sched_ravg_hist_size 3
 
-    # HMP Task packing settings for 8916
+    # HMP Task packing settings for 8909
     write /proc/sys/kernel/sched_small_task 20
     write /proc/sys/kernel/sched_mostly_idle_load 30
     write /proc/sys/kernel/sched_mostly_idle_nr_run 3
