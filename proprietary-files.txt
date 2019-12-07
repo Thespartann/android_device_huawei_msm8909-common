@@ -2,12 +2,12 @@
 vendor/lib/libacdbloader.so
 
 # Camera
-bin/mm-qcamera-daemon
-lib/libdmd_report.so
-lib/libmmcamera_interface.so
-lib/libmmjpeg_interface.so
-lib/libqdMetaData.so
-lib/libqomx_core.so
+vendor/bin/mm-qcamera-daemon
+vendor/lib/libdmd_report.so
+vendor/lib/libmmcamera_interface.so
+vendor/lib/libmmjpeg_interface.so
+vendor/lib/libqdMetaData.so
+vendor/lib/libqomx_core.so
 vendor/lib/libmmcamera2_c2d_module.so
 vendor/lib/libmmcamera2_frame_algorithm.so
 vendor/lib/libmmcamera2_iface_modules.so
@@ -114,15 +114,15 @@ vendor/lib/libmmcamera_truly_cm7700_eeprom.so
 vendor/lib/libstlport.so
 
 # Venus (media) firmware
-etc/firmware/venus.b00
-etc/firmware/venus.b01
-etc/firmware/venus.b02
-etc/firmware/venus.b03
-etc/firmware/venus.b04
-etc/firmware/venus.mbn
-etc/firmware/venus.mdt
+vendor/etc/firmware/venus.b00
+vendor/etc/firmware/venus.b01
+vendor/etc/firmware/venus.b02
+vendor/etc/firmware/venus.b03
+vendor/etc/firmware/venus.b04
+vendor/etc/firmware/venus.mbn
+vendor/etc/firmware/venus.mdt
 
 # Huawei
-bin/libqmi_oem_main
-bin/rmt_oeminfo
-bin/hw_test_diag
+vendor/bin/libqmi_oem_main
+vendor/bin/rmt_oeminfo
+vendor/bin/hw_test_diag
