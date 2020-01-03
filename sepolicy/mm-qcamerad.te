@@ -1,3 +1,6 @@
+allow mm-qcamerad camera_data_file:dir r_dir_perms;
+allow mm-qcamerad mpctl_socket:dir search;
 allow mm-qcamerad proc_appinfo:file r_file_perms;
 allow mm-qcamerad self:tcp_socket { bind create setopt };
 allow mm-qcamerad system_data_file:dir w_dir_perms;
+unix_socket_connect(mm-qcamerad, mpctl, perfd)
