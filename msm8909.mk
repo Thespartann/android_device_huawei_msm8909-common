@@ -14,32 +14,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Must define platform variant before including any common things
-TARGET_BOARD_PLATFORM_VARIANT := msm8916
-
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_ENFORCE_RRO_TARGETS := framework-res
 
-# ANT+
-PRODUCT_PACKAGES += \
-    AntHalService \
-    com.dsi.ant.antradio_library \
-    libantradio
-
 # Audio
 PRODUCT_PACKAGES += \
+    audio.primary.msm8909 \
+    libqcompostprocbundle \
+    libqcomvisualizer \
+    libqcomvoiceprocessing \
     audio.a2dp.default \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
     tinymix
-
-PRODUCT_PACKAGES += \
-    audio.primary.msm8916 \
-    libqcompostprocbundle \
-    libqcomvisualizer \
-    libqcomvoiceprocessing
 
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
@@ -82,11 +71,13 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+    camera.device@1.0-impl \
+    camera.msm8909 \
+    Snap
+
+PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
-    camera.device@1.0-impl \
-    camera.msm8916 \
-    Snap
 
 # Compat symbols
 PRODUCT_PACKAGES += \
@@ -94,11 +85,11 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    gralloc.msm8916 \
-    hwcomposer.msm8916 \
+    gralloc.msm8909 \
+    hwcomposer.msm8909 \
     libgenlock \
     libtinyxml \
-    memtrack.msm8916
+    memtrack.msm8909
 
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
@@ -123,10 +114,10 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
+    gps.msm8909 \
     libshims_get_process_name \
     libshims_flp
-    gps.msm8916
-    
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/flp.conf:system/etc/flp.conf \
     $(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf \
@@ -136,19 +127,13 @@ PRODUCT_COPY_FILES += \
 # Init scripts
 PRODUCT_PACKAGES += \
     init.qcom.rc \
-    init.qcom.bt.sh
+    init.qcom.bt.sh \
     init.qcom.mem.sh \
     init.qcom.power.rc \
     init.qcom.ssr.rc \
     init.qcom.usb.rc \
     init.recovery.qcom.rc \
     ueventd.qcom.rc
-
-# IRQ balance
-ifeq ($(TARGET_BOARD_PLATFORM_VARIANT),msm8939)
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
-endif
 
 # IRSC
 PRODUCT_COPY_FILES += \
@@ -163,7 +148,7 @@ PRODUCT_COPY_FILES += \
 # Keymaster
 ifneq ($(TARGET_PROVIDES_KEYMASTER),true)
 PRODUCT_PACKAGES += \
-    keystore.msm8916
+    keystore.msm8909
 endif
 
 PRODUCT_PACKAGES += \
@@ -174,7 +159,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
     android.hardware.light@2.0-service \
-    lights.msm8916
+    lights.msm8909
 
 # Media
 PRODUCT_PACKAGES += \
@@ -190,8 +175,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml \
     $(LOCAL_PATH)/configs/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
-    $(LOCAL_PATH)/configs/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml
-    $(LOCAL_PATH)/configs/media_codecs_$(TARGET_BOARD_PLATFORM_VARIANT).xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
+    $(LOCAL_PATH)/configs/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
+    $(LOCAL_PATH)/configs/media_codecs_msm8909.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video_le.xml \
@@ -199,7 +184,6 @@ PRODUCT_COPY_FILES += \
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.dsi.ant.antradio_library.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -220,11 +204,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
-
-ifeq ($(TARGET_BOARD_PLATFORM_VARIANT),msm8939)
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml
-endif
 
 # Power
 PRODUCT_PACKAGES += \
@@ -270,10 +249,12 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Sensors HAL
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl \
     calmodule.cfg \
-    sensors.msm8916 \
+    sensors.msm8909 \
     sensors.native
+
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-impl \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
@@ -306,7 +287,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
-    $(LOCAL_PATH)/configs/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
+    $(LOCAL_PATH)/configs/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
     $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_cfg.dat \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv_4x.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_wlan_nv_4x.bin \
@@ -320,5 +301,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 # Inherit product configurations
-$(call inherit-product, vendor/huawei/msm8916-common/msm8916-common-vendor.mk)
-
+$(call inherit-product, vendor/huawei/msm8909-common/msm8909-common-vendor.mk)

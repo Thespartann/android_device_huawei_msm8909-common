@@ -16,8 +16,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter msm8909,$(TARGET_BOARD_PLATFORM_VARIANT)),)
-
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
@@ -116,5 +114,3 @@ $(WCNSS_CFG_SYMLINK): $(LOCAL_INSTALLED_MODULE)
 	$(hide) ln -sf /data/misc/wifi/$(notdir $@) $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(WCNSS_CFG_SYMLINK)
-
-endif
