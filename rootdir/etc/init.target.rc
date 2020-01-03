@@ -47,11 +47,6 @@ on boot
     chown system system /sys/touch_screen/glove_func/signal_disparity
     chown system system /sys/touch_screen/easy_wakeup_gesture
 
-    # NFC
-    setprop ro.nfc.port "I2C"
-    chmod 0660 /dev/pn544
-    chown nfc nfc /dev/pn544
-
 on post-fs
     swapon_all /vendor/etc/fstab.qcom
     write /proc/sys/vm/page-cluster 0
