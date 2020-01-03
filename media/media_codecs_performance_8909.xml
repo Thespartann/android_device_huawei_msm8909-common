@@ -89,7 +89,7 @@
             </Type>
         </MediaCodec>
         <MediaCodec name="OMX.google.hevc.decoder" type="video/hevc" update="true">
-            <Limit name="measured-frame-rate-352x288" range="376-376" />
+            <Limit name="measured-frame-rate-352x288" range="124-144" />
             <Limit name="measured-frame-rate-640x360" range="94-94" />
             <Limit name="measured-frame-rate-720x480" range="81-81" />
             <Limit name="measured-frame-rate-1280x720" range="38-38" />
@@ -107,13 +107,13 @@
             <Limit name="measured-frame-rate-1280x720" range="63-63" />
             <Limit name="measured-frame-rate-1920x1080" range="20-20" />
         </MediaCodec>
-        <MediaCodec name="OMX.ittiam.video.decoder.h263" type="video/3gpp" update="true">
+        <MediaCodec name="OMX.qti.video.decoder.h263sw" type="video/3gpp" update="true">
             <Limit name="measured-frame-rate-176x144" range="760-760" />
             <Limit name="measured-frame-rate-352x288" range="560-560" />
         </MediaCodec>
-        <MediaCodec name="OMX.ittiam.video.decoder.mpeg4" update="true">
+        <MediaCodec name="OMX.qti.video.decoder.mpeg4sw" update="true">
             <Type name="video/mp4v-es">
-                <Limit name="measured-frame-rate-176x144" range="370-370" />
+                <Limit name="measured-frame-rate-176x144" range="270-270" />
                 <Limit name="measured-frame-rate-480x360" range="482-482" />
             </Type>
             <Type name="video/mp4v-esdp">
@@ -122,3 +122,4 @@
          </MediaCodec>
     </Decoders>
 </MediaCodecs>
+
